@@ -23,7 +23,7 @@ public class Controller {
     private double y;
 
     //Para cambiar de escena debemos de volver a obtener el fxml de la escena en si
-    public void switchToScene1(ActionEvent event) throws IOException{
+    public void switchToScene1basic(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/com/example1/primary.fxml"));
         //.getSource devuelve el objeto que disparo el evento, por ejemplo un boton
         //(Node)event.getSource() realiza un cast porque getSource() devuelve Object y necesitamos tratarlo como Node, y todos los elementos visuales heredan de Node
@@ -33,7 +33,7 @@ public class Controller {
         stage.show();
     }
 
-    public void switchToScene2(ActionEvent event) throws IOException{
+    public void switchToScene2basic(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/com/example1/secondary.fxml"));
         //.getSource devuelve el objeto que disparo el evento, por ejemplo un boton
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
