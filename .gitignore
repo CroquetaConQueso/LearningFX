@@ -1,0 +1,43 @@
+# --- Java general ---
+*.class
+*.log
+*.ctxt
+
+# --- VSCode ---
+.vscode/
+
+# --- Maven ---
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# --- IntelliJ (por si abres con él alguna vez) ---
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# --- JavaFX Scene Builder ---
+# (A veces genera archivos temporales o de backup)
+*~ 
+*.bak
+*.tmp
+
+# --- Sistema operativo ---
+.DS_Store         # macOS
+Thumbs.db         # Windows
+ehthumbs.db       # Windows
+desktop.ini       # Windows
+
+# --- Archivos personales que podrías haber añadido por accidente ---
+*.png
+*.jpg
+*.jpeg
+
+# --- Opcional: evita subir módulos compilados si estás usando Java modular ---
+module-info.class
