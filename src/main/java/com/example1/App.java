@@ -13,6 +13,14 @@ public class App extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource( "/com/example1/primary.fxml"));
             Scene scene = new Scene(root);
+            
+            // Si no necesitamos más de una escena se puede hacer: scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+
+            // Para tener varias escenas, debemos de hacer:
+            String css = this.getClass().getResource("application.css").toExternalForm();
+            scene.getStylesheets().add(css);
+
+            //Al tener el css guardado en un String, estos valores pueden ser aplicados en varias escenas, siempre se puede hacer una nueva en el caso de que queramos una completamente
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
