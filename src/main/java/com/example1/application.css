@@ -1,0 +1,15 @@
+/*Para darle estilo a toda una clase o un tipo de , podemos hacer por ejemplo .label y aplicaría el estilo a todos los roots*/
+.root{
+    -fx-background-color:black;   
+}
+
+.label{
+    -fx-font-size: 20;
+    -fx-font-family: "Lucida Console";
+    -fx-text-fill: "green";
+    -fx-alignment: center;
+}
+/* Para dar estilo a objetos en particular/funciones , debemos de enfocar estas. Para hacerlo usamos # y el nombre de la id de ese item */
+#titleLabel1{
+    -fx-font-size: 60;
+}
