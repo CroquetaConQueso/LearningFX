@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -36,6 +37,16 @@ public class Scene3Controller {
     private ImageView imageViewONOFFSc3;
     @FXML
     private CheckBox checkBoxSc3;
+    @FXML
+    private RadioButton wendyRadioBsc3;
+    @FXML
+    private RadioButton missyRadioBsc3;
+    @FXML
+    private RadioButton daisyRadioBsc3;
+    @FXML
+    private RadioButton leylaRadioBsc3;
+    @FXML
+    private Label labelRadioSc3;
 
     Stage stage;
     private int age;
@@ -58,28 +69,47 @@ public class Scene3Controller {
         }
     }
 
-    public void submit(ActionEvent event){
-        //Text va a devolver un String por lo que debemos de convertir el String a un int
-        try{
-        age = Integer.parseInt(ageFiller.getText());
-        if(age>18){
-            titleSc3.setText("You are now signed up!");
-        }else{
-            titleSc3.setText("You must be older than 18 to be able to log");
+    public void submit(ActionEvent event) {
+        // Text va a devolver un String por lo que debemos de convertir el String a un
+        // int
+        try {
+            age = Integer.parseInt(ageFiller.getText());
+            if (age > 18) {
+                titleSc3.setText("You are now signed up!");
+            } else {
+                titleSc3.setText("You must be older than 18 to be able to log");
+            }
         }
+        // Se puede cazar más de un error y se puede averiguar que errores haciendo
+        // Exception y viendo que tipo de error ha sido
+        catch (NumberFormatException e) {
+            titleSc3.setText("Only numbers can be introduced");
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
         }
-        //Se puede cazar más de un error y se puede averiguar que errores haciendo Exception y viendo que tipo de error ha sido
-        catch(NumberFormatException e){titleSc3.setText("Only numbers can be introduced");}
-        catch(Exception e){System.out.println("Error: "+e);}
     }
 
-    public void change(ActionEvent event){
-        if(checkBoxSc3.isSelected()){
+    public void change(ActionEvent event) {
+        if (checkBoxSc3.isSelected()) {
             labelONOFF.setText("ON");
             imageViewONOFFSc3.setImage(myImage2);
-        }else{
+        } else {
             labelONOFF.setText("OFF");
             imageViewONOFFSc3.setImage(myImage1);
+        }
+    }
+
+    public void getName(ActionEvent event){
+        if(wendyRadioBsc3.isSelected()){
+            labelRadioSc3.setText(wendyRadioBsc3.getText());
+        }else if(missyRadioBsc3.isSelected()){
+            labelRadioSc3.setText(missyRadioBsc3.getText());
+        }else if(daisyRadioBsc3.isSelected()){
+            labelRadioSc3.setText(daisyRadioBsc3.getText());
+        }else if(leylaRadioBsc3.isSelected()){
+            labelRadioSc3.setText(leylaRadioBsc3.getText());
+        }else{
+            labelRadioSc3.setText("Elige una opción: ");
         }
     }
 }

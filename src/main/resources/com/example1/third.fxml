@@ -3,7 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,11 +35,20 @@
             <Image url="@urgh.jpg" />
          </image>
       </ImageView>
-      <CheckBox fx:id="checkBoxSc3" layoutX="84.0" layoutY="627.0" mnemonicParsing="false" onAction="#change" text="ON/OFF">
+      <CheckBox fx:id="checkBoxSc3" layoutX="60.0" layoutY="623.0" mnemonicParsing="false" onAction="#change" text="ON/OFF">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </CheckBox>
-      <Label fx:id="labelONOFF" layoutX="107.0" layoutY="584.0" text="OFF" />
+      <Label fx:id="labelONOFF" layoutX="82.0" layoutY="594.0" text="OFF" />
+      <RadioButton fx:id="wendyRadioBsc3" layoutX="332.0" layoutY="566.0" mnemonicParsing="false" onAction="#getName" text="Wendy">
+         <toggleGroup>
+            <ToggleGroup fx:id="namePets" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="missyRadioBsc3" layoutX="416.0" layoutY="566.0" mnemonicParsing="false" onAction="#getName" text="Missy" toggleGroup="$namePets" />
+      <RadioButton fx:id="daisyRadioBsc3" layoutX="495.0" layoutY="566.0" mnemonicParsing="false" onAction="#getName" text="Daisy" toggleGroup="$namePets" />
+      <RadioButton fx:id="leylaRadioBsc3" layoutX="570.0" layoutY="566.0" mnemonicParsing="false" onAction="#getName" text="Leyla" toggleGroup="$namePets" />
+      <Label fx:id="labelRadioSc3" layoutX="468.0" layoutY="491.0" text="TEXT" />
    </children>
 </AnchorPane>
