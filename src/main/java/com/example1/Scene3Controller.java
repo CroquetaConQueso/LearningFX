@@ -1,9 +1,16 @@
 package com.example1;
 
+import java.util.InputMismatchException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
@@ -15,8 +22,25 @@ public class Scene3Controller {
     private Button lougoutButton;
     @FXML
     private AnchorPane scene3Pane;
+    @FXML
+    private Label titleSc3;
+    @FXML
+    private Label promptSc3;
+    @FXML
+    private Label labelONOFF;
+    @FXML
+    private TextField ageFiller;
+    @FXML
+    private Button buttonSubmitSc3;
+    @FXML
+    private ImageView imageViewONOFFSc3;
+    @FXML
+    private CheckBox checkBoxSc3;
 
     Stage stage;
+    private int age;
+    private Image myImage1 = new Image(getClass().getResourceAsStream("/com/example1/urgh.jpg"));
+    private Image myImage2 = new Image(getClass().getResourceAsStream("/com/example1/argh.jpg"));
 
     public void logout(ActionEvent event) {
 
@@ -31,6 +55,31 @@ public class Scene3Controller {
             stage = (Stage) scene3Pane.getScene().getWindow();
             System.out.println("WOOOOAH");
             stage.close();
+        }
+    }
+
+    public void submit(ActionEvent event){
+        //Text va a devolver un String por lo que debemos de convertir el String a un int
+        try{
+        age = Integer.parseInt(ageFiller.getText());
+        if(age>18){
+            titleSc3.setText("You are now signed up!");
+        }else{
+            titleSc3.setText("You must be older than 18 to be able to log");
+        }
+        }
+        //Se puede cazar más de un error y se puede averiguar que errores haciendo Exception y viendo que tipo de error ha sido
+        catch(NumberFormatException e){titleSc3.setText("Only numbers can be introduced");}
+        catch(Exception e){System.out.println("Error: "+e);}
+    }
+
+    public void change(ActionEvent event){
+        if(checkBoxSc3.isSelected()){
+            labelONOFF.setText("ON");
+            imageViewONOFFSc3.setImage(myImage2);
+        }else{
+            labelONOFF.setText("OFF");
+            imageViewONOFFSc3.setImage(myImage1);
         }
     }
 }
