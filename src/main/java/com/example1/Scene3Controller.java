@@ -1,13 +1,18 @@
 package com.example1;
 
-import java.util.InputMismatchException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -17,7 +22,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class Scene3Controller {
+public class Scene3Controller implements Initializable{
 
     @FXML
     private Button lougoutButton;
@@ -47,8 +52,15 @@ public class Scene3Controller {
     private RadioButton leylaRadioBsc3;
     @FXML
     private Label labelRadioSc3;
+    @FXML
+    private ListView<String> listViewSc3;
+    @FXML
+    private Label labelListViewSc3;
 
-    Stage stage;
+    private String[] valoresListViewSc3 = {"Coffee","Cheese","Mortadela","Chorizo","ColaCao","Perrito","Bonito","Rape","Dorada","Lubina","Chanquetes","Chupines"}; 
+    private String currentChoice;
+
+    private Stage stage;
     private int age;
     private Image myImage1 = new Image(getClass().getResourceAsStream("/com/example1/urgh.jpg"));
     private Image myImage2 = new Image(getClass().getResourceAsStream("/com/example1/argh.jpg"));
@@ -111,5 +123,20 @@ public class Scene3Controller {
         }else{
             labelRadioSc3.setText("Elige una opción: ");
         }
+    }
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        listViewSc3.getItems().addAll(valoresListViewSc3);
+        listViewSc3.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+            @Override
+            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+                currentChoice = listViewSc3.getSelectionModel().getSelectedItem();
+                labelListViewSc3.setText(currentChoice);
+            }
+            
+        });
+
     }
 }

@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TreeView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example1.Scene2Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="853.0" prefWidth="1273.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example1.Scene2Controller">
    <children>
       <Label fx:id="textScene2" layoutX="20.0" layoutY="24.0" text="Hello:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="gongScene3" layoutX="528.0" layoutY="27.0" mnemonicParsing="false" onAction="#goToScene3" text="Button" />
+      <Button fx:id="gongScene3" layoutX="1197.0" layoutY="24.0" mnemonicParsing="false" onAction="#goToScene3" text="Button" />
       <Button fx:id="buttonImage" layoutX="274.0" layoutY="671.0" mnemonicParsing="false" onAction="#displayImage" text="Click!" />
       <ImageView fx:id="vistaImage" fitHeight="467.0" fitWidth="498.0" layoutX="45.0" layoutY="174.0" onMouseEntered="#displayImage" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,5 +30,32 @@
             <Cursor fx:constant="CROSSHAIR" />
          </cursor>
       </ImageView>
+      <Label fx:id="labelDateSc2" layoutX="555.0" layoutY="161.0" prefHeight="17.0" prefWidth="194.0" text="Choose a date:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickerSc2" layoutX="565.0" layoutY="203.0" onAction="#getDate" promptText="Enter a date:" />
+      <ChoiceBox fx:id="choiceBoxSc2" layoutX="565.0" layoutY="375.0" prefWidth="150.0" />
+      <Label fx:id="labelChoiceBox" layoutX="565.0" layoutY="339.0" prefHeight="17.0" prefWidth="200.0" text="Option:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Accordion layoutX="-613.0" layoutY="178.0">
+        <panes>
+          <TitledPane animated="false" text="untitled 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="untitled 3">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <TreeView fx:id="treeViewSc2" layoutX="927.0" layoutY="103.0" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="527.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

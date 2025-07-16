@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -49,6 +50,12 @@
       <RadioButton fx:id="missyRadioBsc3" layoutX="416.0" layoutY="566.0" mnemonicParsing="false" onAction="#getName" text="Missy" toggleGroup="$namePets" />
       <RadioButton fx:id="daisyRadioBsc3" layoutX="495.0" layoutY="566.0" mnemonicParsing="false" onAction="#getName" text="Daisy" toggleGroup="$namePets" />
       <RadioButton fx:id="leylaRadioBsc3" layoutX="570.0" layoutY="566.0" mnemonicParsing="false" onAction="#getName" text="Leyla" toggleGroup="$namePets" />
-      <Label fx:id="labelRadioSc3" layoutX="468.0" layoutY="491.0" text="TEXT" />
+      <Label fx:id="labelRadioSc3" layoutX="452.0" layoutY="491.0" text="ELIGE UNO" />
+      <ListView fx:id="listViewSc3" layoutX="618.0" layoutY="200.0" prefHeight="284.0" prefWidth="200.0" />
+      <Label fx:id="labelListViewSc3" alignment="CENTER" layoutX="618.0" layoutY="153.0" prefHeight="31.0" prefWidth="200.0" text="Choice:">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
