@@ -15,9 +15,20 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         try {
+
+            /*Anteriormente tenía esto:
             Parent root = FXMLLoader.load(getClass().getResource( "/com/example1/primary.fxml"));
             Scene scene = new Scene(root);
             
+            Pero para poder registrar keyEvents he de realizarlo de otra forma, instanciando FXMLLoader yh luego haciendo un loader.load hacía el root
+            
+            */
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example1/primary.fxml"));
+            Parent root = loader.load();
+            Scene1Controller controller1 = loader.getController();
+            Scene scene = new Scene(root);
+
+
             // Si no necesitamos más de una escena se puede hacer: scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
             // Para tener varias escenas, debemos de hacer:
